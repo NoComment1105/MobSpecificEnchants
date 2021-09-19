@@ -8,4 +8,5 @@ Funny mob enchants cause why not lol
 
 This template is using the balls license
 
-##Shit
+
+## Shit
