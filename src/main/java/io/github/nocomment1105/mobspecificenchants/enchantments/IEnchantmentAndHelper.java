@@ -1,7 +1,6 @@
 package io.github.nocomment1105.mobspecificenchants.enchantments;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.ItemStack;
 
 public interface IEnchantmentAndHelper
