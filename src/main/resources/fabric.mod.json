@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "mobspecificenchants",
+  "version": "${version}",
+
+  "name": "MobSpecificEnchants",
+  "description": "This mod adds some mob specific enchants to Minecraft",
+  "authors": [
+    "NoComment1105",
+    "Bubblie01"
+  ],
+  "contact": {
+    "homepage": "https://nocomment1105.github.io/",
+    "sources": "https://github.com/NoComment1105/mobspecificenchants"
+  },
+
+  "license": "LGPL-3.0",
+  "icon": "assets/mobspecificenchants/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.nocomment1105.mobspecificenchants.MobSpecificEnchants"
+    ]
+  },
+  "mixins": [
+    "mobspecificenchants.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {},
+  "accessWidener" : "mobspecificenchants.accesswidener"
+}
