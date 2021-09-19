@@ -11,7 +11,8 @@
   ],
   "contact": {
     "homepage": "https://nocomment1105.github.io/",
-    "sources": "https://github.com/NoComment1105/mobspecificenchants"
+    "sources": "https://github.com/NoComment1105/mobspecificenchants",
+    "issues": "https://github.com/NoComment1105/mobspecificenchants/issues"
   },
 
   "license": "LGPL-3.0",
