@@ -4,6 +4,7 @@ import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
+import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
@@ -46,7 +47,7 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
 
     @Override
     public float getEntityAttackDamage(Entity entity, int level) {
-        if(entity.getType() == EntityType.VILLAGER) {
+        if(entity instanceof EnderDragonPart) {
             return (float)level * 2.5f;
         }
 
