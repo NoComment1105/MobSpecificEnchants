@@ -32,7 +32,7 @@ public class BaneOfPigs extends Enchantment implements IEnchantmentAndHelper {
     }
 
     @Override
-    public float getEntityAttackDamage(LivingEntity entity, int level) {
+    public float getEntityAttackDamage(Entity entity, int level) {
         if (entity.getType() == EntityType.PIG || entity.getType() == EntityType.PIGLIN ||
                 entity.getType() == EntityType.PIGLIN_BRUTE) {
             return (float) level * 2.5f;

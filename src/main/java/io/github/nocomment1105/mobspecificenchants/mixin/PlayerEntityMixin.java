@@ -32,7 +32,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements IEnchant
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F", shift = At.Shift.AFTER))
     private void mixinAttackForEnchant(Entity target, CallbackInfo ci)
     {
-        entityDamageAdder = enchantHelp.getEntityAttackDamageHelper(this.getMainHandStack(), (LivingEntity) target);
+        entityDamageAdder = enchantHelp.getEntityAttackDamageHelper(this.getMainHandStack(), target);
     }
 
     //Mixin into attack but after the resetLastAttackedTicks method is called as this gives access to float i which is used for sweeping damage and stuff.

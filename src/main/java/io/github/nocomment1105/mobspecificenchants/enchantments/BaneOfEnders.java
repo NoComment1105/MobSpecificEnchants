@@ -37,7 +37,7 @@ public class BaneOfEnders extends Enchantment implements IEnchantmentAndHelper {
 
     // TODO break this until it allows use on ender dragon
     @Override
-    public float getEntityAttackDamage(LivingEntity entity, int level) {
+    public float getEntityAttackDamage(Entity entity, int level) {
         if (entity.getType() == EntityType.ENDERMAN || entity.getType() == EntityType.ENDERMITE || entity.getType() == EntityType.SHULKER) {
             return (float) level * 2.5f;
         }
