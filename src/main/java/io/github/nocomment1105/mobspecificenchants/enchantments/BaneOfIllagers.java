@@ -4,8 +4,6 @@ import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
-import net.minecraft.entity.boss.dragon.EnderDragonPart;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
@@ -24,8 +22,6 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
     public boolean canAccept(Enchantment other) {
         return super.canAccept(other) && !(other instanceof DamageEnchantment);
     }
-
-
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
@@ -47,12 +43,9 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
 
     @Override
     public float getEntityAttackDamage(Entity entity, int level) {
-        if(entity instanceof EnderDragonPart) {
+        if(entity.getType() == EntityType.VILLAGER) {
             return (float)level * 2.5f;
         }
-
         return 0.0f;
     }
-
-
 }

@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
@@ -35,11 +36,13 @@ public class BaneOfEnders extends Enchantment implements IEnchantmentAndHelper {
         super.onTargetDamaged(user, target, level);
     }
 
-    // TODO break this until it allows use on ender dragon
     @Override
     public float getEntityAttackDamage(Entity entity, int level) {
         if (entity.getType() == EntityType.ENDERMAN || entity.getType() == EntityType.ENDERMITE || entity.getType() == EntityType.SHULKER) {
             return (float) level * 2.5f;
+        }
+        if (entity instanceof EnderDragonPart) {
+            return (float) level * 3f;
         }
         return 0.0f;
     }
