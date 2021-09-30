@@ -3,16 +3,13 @@ package io.github.nocomment1105.mobspecificenchants.enchantments;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.boss.dragon.EnderDragonPart;
+import net.minecraft.entity.*;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class BaneOfEnders extends Enchantment implements IEnchantmentAndHelper {
-    public BaneOfEnders(Enchantment.Rarity weight, EquipmentSlot... slots) {
+public class WitherWaster extends Enchantment implements IEnchantmentAndHelper {
+
+    public WitherWaster(Enchantment.Rarity weight, EquipmentSlot... slots) {
         super(weight, EnchantmentTarget.WEAPON, slots);
     }
 
@@ -22,7 +19,7 @@ public class BaneOfEnders extends Enchantment implements IEnchantmentAndHelper {
     }
 
     @Override
-    protected boolean canAccept(Enchantment other) {
+    public boolean canAccept(Enchantment other) {
         return super.canAccept(other) && !(other instanceof DamageEnchantment);
     }
 
@@ -38,13 +35,9 @@ public class BaneOfEnders extends Enchantment implements IEnchantmentAndHelper {
 
     @Override
     public float getEntityAttackDamage(Entity entity, int level) {
-        if (entity.getType() == EntityType.ENDERMAN || entity.getType() == EntityType.ENDERMITE || entity.getType() == EntityType.SHULKER) {
-            return (float) level * 3f;
-        }
-        if (entity instanceof EnderDragonPart) {
-            return (float) level * 3f;
+        if (entity.getType() == EntityType.WITHER || entity.getType() == EntityType.WITHER_SKELETON) {
+            return (float) level * 3.2f;
         }
         return 0.0f;
     }
-
 }

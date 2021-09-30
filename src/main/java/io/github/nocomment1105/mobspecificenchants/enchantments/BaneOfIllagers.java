@@ -31,7 +31,7 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
     @Override
     public float getAttackDamage(int level, EntityGroup group) {
         if (group == EntityGroup.ILLAGER) {
-            return (float)level * 2.5f;
+            return (float)level * 3f;
         }
         return 0.0f;
     }
