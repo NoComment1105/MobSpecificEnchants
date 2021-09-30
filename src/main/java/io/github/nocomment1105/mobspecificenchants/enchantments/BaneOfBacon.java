@@ -33,13 +33,13 @@ public class BaneOfBacon extends Enchantment implements IEnchantmentAndHelper {
     }
 
     @Override
-    public float getEntityAttackDamage(Entity entity, int level) {
+    public float getEntityAttackDamage(Entity entity, float level) {
         if (entity.getType() == EntityType.PIG || entity.getType() == EntityType.PIGLIN ||
                 entity.getType() == EntityType.PIGLIN_BRUTE) {
-            return (float) level * 3f;
+            return level * 3f;
         }
         if (entity.getType() == EntityType.ZOMBIFIED_PIGLIN) {
-            return (float) level * 2.5f;
+            return level * 2.5f;
         }
         return 0.0f;
     }

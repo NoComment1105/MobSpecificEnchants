@@ -34,9 +34,9 @@ public class WitherWaster extends Enchantment implements IEnchantmentAndHelper {
     }
 
     @Override
-    public float getEntityAttackDamage(Entity entity, int level) {
+    public float getEntityAttackDamage(Entity entity, float level) {
         if (entity.getType() == EntityType.WITHER || entity.getType() == EntityType.WITHER_SKELETON) {
-            return (float) level * 3.2f;
+            return level * 3.2f;
         }
         return 0.0f;
     }

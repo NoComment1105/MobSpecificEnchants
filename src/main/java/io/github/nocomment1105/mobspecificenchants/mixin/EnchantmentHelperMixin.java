@@ -15,7 +15,7 @@ public abstract class EnchantmentHelperMixin implements IEnchantmentAndHelper {
 
 
     @Shadow
-    protected static void forEachEnchantment(EnchantmentHelper.Consumer consumer, ItemStack stack) {
+    private static void forEachEnchantment(EnchantmentHelper.Consumer consumer, ItemStack stack) {
     }
 
     public float getEntityAttackDamageHelper(ItemStack stack, Entity entity) {

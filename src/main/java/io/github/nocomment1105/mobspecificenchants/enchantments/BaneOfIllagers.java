@@ -42,9 +42,9 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
     }
 
     @Override
-    public float getEntityAttackDamage(Entity entity, int level) {
-        if(entity.getType() == EntityType.VILLAGER) {
-            return (float)level * 2.5f;
+    public float getEntityAttackDamage(Entity entity, float level) {
+        if (entity.getType() == EntityType.VILLAGER) {
+            return level * 2.5f;
         }
         return 0.0f;
     }

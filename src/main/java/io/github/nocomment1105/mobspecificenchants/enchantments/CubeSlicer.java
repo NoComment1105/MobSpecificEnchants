@@ -35,9 +35,9 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
     }
 
     @Override
-    public float getEntityAttackDamage(Entity entity, int level) {
+    public float getEntityAttackDamage(Entity entity, float level) {
         if (entity.getType() == EntityType.SLIME || entity.getType() == EntityType.MAGMA_CUBE) {
-            return (float) level * 3f;
+            return level * 3f;
         }
         return 0.0f;
     }
