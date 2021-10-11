@@ -1,4 +1,4 @@
-package io.github.nocomment1105.mobspecificenchants.enchantments;
+package io.github.nocomment1105.mobspecificenchants.registry.enchantments;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;

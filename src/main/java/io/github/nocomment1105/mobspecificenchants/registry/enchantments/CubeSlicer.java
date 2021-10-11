@@ -1,4 +1,4 @@
-package io.github.nocomment1105.mobspecificenchants.enchantments;
+package io.github.nocomment1105.mobspecificenchants.registry.enchantments;
 
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
@@ -21,7 +21,8 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && !(other instanceof DamageEnchantment);
+        return super.canAccept(other) && !(other instanceof DamageEnchantment) && !(other instanceof BaneOfIllagers)
+                && !(other instanceof BaneOfEnders) && !(other instanceof BaneOfBacon) && !(other instanceof CubeSlicer);
     }
 
     @Override

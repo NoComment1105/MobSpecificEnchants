@@ -1,9 +1,8 @@
 package io.github.nocomment1105.mobspecificenchants.mixin;
 
-import io.github.nocomment1105.mobspecificenchants.enchantments.IEnchantmentAndHelper;
+import io.github.nocomment1105.mobspecificenchants.registry.enchantments.IEnchantmentAndHelper;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.spongepowered.asm.mixin.Mixin;
