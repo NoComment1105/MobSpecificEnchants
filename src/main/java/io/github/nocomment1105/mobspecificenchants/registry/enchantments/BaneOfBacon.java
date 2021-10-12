@@ -12,6 +12,12 @@ public class BaneOfBacon extends Enchantment implements IEnchantmentAndHelper {
     public BaneOfBacon(Enchantment.Rarity weight, EquipmentSlot... slots) {
         super(weight, EnchantmentTarget.WEAPON, slots);
     }
+
+    @Override
+    public int getMinPower(int level) {
+        return 10 + 25 * (level - 1);
+    }
+
     @Override
     public int getMaxLevel() {
         return 5;

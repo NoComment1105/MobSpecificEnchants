@@ -18,7 +18,16 @@ This mod adds several enchants with mob specific features!
 
 ### Features
 * Bane Of Illagers Enchant
-  * Does 2.5 times damage to Illagers and Villagers, 1.5 times damage to Zombie Villagers 
+  * Does 3 times damage to Illagers and Villagers, 2.5 times damage to Zombie Villagers 
+* Bane of Bacon enchant
+  * Does 3 times damage to Pig based mobs, 2.5 times to Zombified Piglins
+* Bane of Enders Enchant
+  * Does 3 times damage to all End based mobs
+* Cube Slicer Enchant
+  * Does 2.5 times damage to Slime and Magma cubes
+* Wither Waster Enchant
+  * Does 3.2 times damage to Withers and Wither Skeleton
+  * Can only be obtained from trading and treasure
 
 ### The Developers
 

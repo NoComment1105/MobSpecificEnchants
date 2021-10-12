@@ -13,7 +13,7 @@ public class MobSpecificEnchants implements ModInitializer {
     private static final BaneOfIllagers BANE_OF_ILLAGERS = Registry.register(Registry.ENCHANTMENT, new Identifier(
             MOD_ID, "bane_of_illagers"), new BaneOfIllagers(Enchantment.Rarity.UNCOMMON, EquipmentSlot.MAINHAND));
 
-    private static final BaneOfBacon BANE_OF_PIGS = Registry.register(Registry.ENCHANTMENT, new Identifier(
+    private static final BaneOfBacon BANE_OF_BACON = Registry.register(Registry.ENCHANTMENT, new Identifier(
             MOD_ID, "bane_of_bacon"), new BaneOfBacon(Enchantment.Rarity.COMMON, EquipmentSlot.MAINHAND));
 
     private static final BaneOfEnders BANE_OF_ENDERS = Registry.register(Registry.ENCHANTMENT, new Identifier(

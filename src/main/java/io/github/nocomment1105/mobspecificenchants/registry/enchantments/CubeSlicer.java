@@ -14,6 +14,12 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
     public CubeSlicer(Enchantment.Rarity weight, EquipmentSlot... slots) {
         super(weight, EnchantmentTarget.WEAPON, slots);
     }
+
+    @Override
+    public int getMinPower(int level) {
+        return 5 + 10 * (level - 1);
+    }
+
     @Override
     public int getMaxLevel() {
         return 3;
@@ -38,7 +44,7 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
     @Override
     public float getEntityAttackDamage(Entity entity, float level) {
         if (entity.getType() == EntityType.SLIME || entity.getType() == EntityType.MAGMA_CUBE) {
-            return level * 3f;
+            return level * 2.5f;
         }
         return 0.0f;
     }

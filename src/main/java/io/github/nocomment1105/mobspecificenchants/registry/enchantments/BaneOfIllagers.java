@@ -14,6 +14,11 @@ public class BaneOfIllagers extends Enchantment implements IEnchantmentAndHelper
     }
 
     @Override
+    public int getMinPower(int level) {
+        return 12 + (level - 1) * 9;
+    }
+
+    @Override
     public int getMaxLevel() {
         return 5;
     }
