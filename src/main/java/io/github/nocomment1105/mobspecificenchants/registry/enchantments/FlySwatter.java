@@ -1,6 +1,5 @@
 package io.github.nocomment1105.mobspecificenchants.registry.enchantments;
 
-import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -9,15 +8,15 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
-public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
+public class FlySwatter extends Enchantment implements IEnchantmentAndHelper{
 
-    public CubeSlicer(Enchantment.Rarity weight, EquipmentSlot... slots) {
+    public FlySwatter(Rarity weight, EquipmentSlot... slots) {
         super(weight, EnchantmentTarget.WEAPON, slots);
     }
 
     @Override
     public int getMinPower(int level) {
-        return 7 + 10 * (level - 1);
+        return 15 + 10 * (level - 1);
     }
 
     @Override
@@ -27,8 +26,8 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && !(other instanceof DamageEnchantment) && !(other instanceof BaneOfIllagers)
-                && !(other instanceof BaneOfEnders) && !(other instanceof BaneOfBacon) && !(other instanceof CubeSlicer);
+        return super.canAccept(other) && !(other instanceof BaneOfBacon) && !(other instanceof BaneOfEnders)
+                && !(other instanceof CubeSlicer) && !(other instanceof WitherWaster);
     }
 
     @Override
@@ -39,11 +38,13 @@ public class CubeSlicer extends Enchantment implements IEnchantmentAndHelper {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         super.onTargetDamaged(user, target, level);
-    }
 
+    }
     @Override
     public float getEntityAttackDamage(Entity entity, float level) {
-        if (entity.getType() == EntityType.SLIME || entity.getType() == EntityType.MAGMA_CUBE) {
+        if (entity.getType() == EntityType.GHAST || entity.getType() == EntityType.PARROT || entity.getType() == EntityType.BEE
+        || entity.getType() == EntityType.PHANTOM || entity.getType() == EntityType.BAT || entity.getType() == EntityType.BLAZE
+        || entity.getType() == EntityType.VEX) {
             return level * 2.5f;
         }
         return 0.0f;

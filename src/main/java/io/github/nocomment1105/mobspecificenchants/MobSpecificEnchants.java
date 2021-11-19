@@ -7,6 +7,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("unused")
 public class MobSpecificEnchants implements ModInitializer {
     public static final String MOD_ID = "mobspecificenchants";
 
@@ -24,6 +25,13 @@ public class MobSpecificEnchants implements ModInitializer {
 
     private static final WitherWaster WITHER_WASTER = Registry.register(Registry.ENCHANTMENT, new Identifier(
             MOD_ID, "wither_waster"), new WitherWaster(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+
+    private static final FlySwatter FLY_SWATTER = Registry.register(Registry.ENCHANTMENT, new Identifier(
+            MOD_ID, "fly_swatter"), new FlySwatter(Enchantment.Rarity.UNCOMMON, EquipmentSlot.MAINHAND));
+
+    private static final IcyEdge ICY_EDGE = Registry.register(Registry.ENCHANTMENT, new Identifier(
+            MOD_ID, "icy_edge"), new IcyEdge(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+
 
     @Override
     public void onInitialize() {
