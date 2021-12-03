@@ -1,9 +1,10 @@
+//file:noinspection GroovyAssignabilityCheck
 import com.modrinth.minotaur.TaskModrinthUpload
 
 plugins {
 	id 'fabric-loom' version '0.10.+'
     id 'io.github.juuxel.loom-quiltflower-mini' version '1.1.0'
-	id 'com.modrinth.minotaur' version '1.2.1'
+	id 'com.modrinth.minotaur' version '1.1.0'
 	id 'com.matthewprenger.cursegradle' version '1.4.0'
 	id 'maven-publish'
 }
@@ -96,7 +97,7 @@ task modrinth(type: TaskModrinthUpload, dependsOn: remapJar) {
 	projectId = 'knrbsoH0'
 	versionNumber = "MobSpecificEnchants $project.version"
 	versionName = "[$project.minecraft_version] v$project.version"
-	versionType = 'RELEASE'
+	releaseType = 'release'
 	uploadFile = remapJar
 	addGameVersion("$project.minecraft_version")
 	addLoader('fabric')
@@ -113,10 +114,10 @@ curseforge {
 		relations {
 			requiredDependency 'fabric-api'
 		}
-		addGameVersion "1.17.1"
+		addGameVersion "1.18"
 		addGameVersion 'Fabric'
 
-		mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar")) {
+		mainArtifact(remapJar) {
 			displayName = "[$project.minecraft_version] v$project.version"
 		}
 		afterEvaluate {
@@ -126,4 +127,7 @@ curseforge {
 	options {
 		forgeGradleIntegration = false
 	}
+}
+quiltflower {
+	addToRuntimeClasspath.set(true)
 }

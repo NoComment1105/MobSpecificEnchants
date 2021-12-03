@@ -1,2 +1,3 @@
-# Version 1.0.0
-* Initial Release!
+# Version 1.1.0
+* Updated to 1.18
+* Added Fly Swatter an Icy edge enchantments
