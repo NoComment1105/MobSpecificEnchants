@@ -28,6 +28,12 @@ This mod adds several enchants with mob specific features!
 * Wither Waster Enchant
   * Does 3.2 times damage to Withers and Wither Skeleton
   * Can only be obtained from trading and treasure
+* Fly Swatter
+  * Does 2.5 times damage to flying mobs
+* Icy Edge
+  * Applies Slowness to mobs. (Will eventually be updated to actually do freezing) 
+  * Applies both Slowness and Weakness to nether mobs, because cold bad to them 🥶
+  * Does more damage to Nether mobs, again because cold bad. The extra damage is the level of enchantment you have (So 2 extra if you have icy edge 2)
 
 ### The Developers
 
@@ -37,8 +43,8 @@ This mod adds several enchants with mob specific features!
 | Bubblie01 | Assistant Mod Lead | [Contributions](https://github.com/NoComment1105/MobSpecificEnchants/commits?author=Bubblie01)
 
 ### Versioning
-This mod is >= 1.17 at it's oldest. We am **NOT** going to back-port this mod to any older versions
-We will try our hardest to updates this mod, in its latest release at the time, within a week the next version
+This mod is >= 1.17 at it's oldest. We are **NOT** going to back-port this mod to any older versions
+We will try our hardest to updates this mod, in its latest release at the time, within a week the next Minecraft version
 
 
 <img src="https://user-images.githubusercontent.com/67918617/115963692-69eefc00-a518-11eb-9a4b-28196a8ea004.png" alt="No Forge" width="225"></a>
