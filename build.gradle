@@ -3,7 +3,7 @@ import com.modrinth.minotaur.TaskModrinthUpload
 
 plugins {
 	id 'fabric-loom' version '0.10.+'
-    id 'io.github.juuxel.loom-quiltflower-mini' version '1.1.0'
+    id 'io.github.juuxel.loom-quiltflower-mini' version '1.2.0'
 	id 'com.modrinth.minotaur' version '1.1.0'
 	id 'com.matthewprenger.cursegradle' version '1.4.0'
 	id 'maven-publish'
@@ -22,6 +22,13 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven {
+		name = "Modrinth"
+		url = 'https://api.modrinth.com/maven'
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -35,6 +42,8 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+	modImplementation 'maven.modrinth:lazydfu:0.1.2'
+	//modImplementation 'maven.modrinth:sodium:mc1.18-0.4.0-alpha5'
 }
 
 processResources {
@@ -114,7 +123,8 @@ curseforge {
 		relations {
 			requiredDependency 'fabric-api'
 		}
-		addGameVersion "1.18"
+		addGameVersion '1.18'
+		addGameVersion '1.18.1'
 		addGameVersion 'Fabric'
 
 		mainArtifact(remapJar) {
