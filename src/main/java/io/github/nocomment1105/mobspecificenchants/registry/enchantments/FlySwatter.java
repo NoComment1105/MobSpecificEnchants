@@ -8,7 +8,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
-public class FlySwatter extends Enchantment implements IEnchantmentAndHelper{
+public class FlySwatter extends Enchantment implements IEnchantmentAndHelper {
 
     public FlySwatter(Rarity weight, EquipmentSlot... slots) {
         super(weight, EnchantmentTarget.WEAPON, slots);
@@ -40,11 +40,12 @@ public class FlySwatter extends Enchantment implements IEnchantmentAndHelper{
         super.onTargetDamaged(user, target, level);
 
     }
+
     @Override
     public float getEntityAttackDamage(Entity entity, float level) {
         if (entity.getType() == EntityType.GHAST || entity.getType() == EntityType.PARROT || entity.getType() == EntityType.BEE
-        || entity.getType() == EntityType.PHANTOM || entity.getType() == EntityType.BAT || entity.getType() == EntityType.BLAZE
-        || entity.getType() == EntityType.VEX) {
+                || entity.getType() == EntityType.PHANTOM || entity.getType() == EntityType.BAT || entity.getType() == EntityType.BLAZE
+                || entity.getType() == EntityType.VEX) {
             return level * 2.5f;
         }
         return 0.0f;

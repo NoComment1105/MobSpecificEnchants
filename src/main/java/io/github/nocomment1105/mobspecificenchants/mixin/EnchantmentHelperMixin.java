@@ -11,19 +11,16 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(EnchantmentHelper.class)
 public abstract class EnchantmentHelperMixin implements IEnchantmentAndHelper {
-
-
     @Shadow
-    private static void forEachEnchantment(EnchantmentHelper.Consumer consumer, ItemStack stack) {
-    }
+    private static void forEachEnchantment(EnchantmentHelper.Consumer consumer, ItemStack stack) { }
 
     public float getEntityAttackDamageHelper(ItemStack stack, Entity entity) {
 
         MutableFloat mutableFloat = new MutableFloat();
         forEachEnchantment((enchantment, level) -> {
-            IEnchantmentAndHelper helper = (IEnchantmentAndHelper)enchantment;
-            mutableFloat.add(helper.getEntityAttackDamage(entity,level));
-        },stack);
+            IEnchantmentAndHelper helper = (IEnchantmentAndHelper) enchantment;
+            mutableFloat.add(helper.getEntityAttackDamage(entity, level));
+        }, stack);
 
         return mutableFloat.floatValue();
     }
