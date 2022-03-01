@@ -29,7 +29,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements IEnchant
         super(entityType, world);
     }
 
-    //Mixin into attack so it can add a value to entityDamageAdder
+    //Mixin into attack, so it can add a value to entityDamageAdder
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F", shift = At.Shift.AFTER))
     private void mixinAttackForEnchant(Entity target, CallbackInfo ci) {
         entityDamageAdder = enchantHelp.getEntityAttackDamageHelper(this.getMainHandStack(), target);
@@ -39,7 +39,6 @@ public abstract class PlayerEntityMixin extends LivingEntity implements IEnchant
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;resetLastAttackedTicks()V"), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void mixinMultiplyingToEntityDamage(Entity target, CallbackInfo ci, float i) {
         entityDamageAdder *= i;
-
     }
 
     //Adding entityDamageAdder to float f which contains the generic attack damage attribute.
