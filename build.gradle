@@ -2,12 +2,12 @@
 import com.modrinth.minotaur.TaskModrinthUpload
 
 plugins {
-	id('fabric-loom') version('0.11.+')
+	id('fabric-loom') version('0.12.+')
 	id('maven-publish')
-	id('com.modrinth.minotaur') version('1.2.1')
-	id('com.matthewprenger.cursegradle') version('1.4.0')
-	id('io.github.juuxel.loom-quiltflower') version('1.6.0')
-	id('org.quiltmc.quilt-mappings-on-loom') version('4.0.0')
+	id('com.modrinth.minotaur') version('2.+')
+	id('com.matthewprenger.cursegradle') version('1.+')
+	id('io.github.juuxel.loom-quiltflower') version('1.+')
+	id('org.quiltmc.quilt-mappings-on-loom') version('4.+')
 }
 
 def targetJavaVersion = 17
@@ -84,18 +84,14 @@ quiltflower {
 	addToRuntimeClasspath.set(true)
 }
 
-task modrinth(type: TaskModrinthUpload, dependsOn: remapJar) {
-	onlyIf {
-		System.getenv('MODRINTH_TOKEN')
-	}
+modrinth {
 	token = System.getenv('MODRINTH_TOKEN')
 	projectId = 'knrbsoH0'
-	versionNumber = "MobSpecificEnchants $project.version"
-	versionName = "[$project.minecraft_version] v$project.version"
+	versionNumber = "$project.version"
 	versionType = 'RELEASE'
 	uploadFile = remapJar
-	addGameVersion("$project.minecraft_version")
-	addLoader('fabric')
+	gameVersions = ["$project.minecraft_version"]
+	loaders = ['fabric', 'Quilt']
 }
 def CURSEFORGE_TOKEN = System.getenv('CURSEFORGE_TOKEN')
 
@@ -109,8 +105,8 @@ curseforge {
 		relations {
 			requiredDependency 'fabric-api'
 		}
-		addGameVersion '1.18'
-		addGameVersion '1.18.1'
+		addGameVersion "$project.minecraft_version"
+		addGameVersion 'Quilt'
 		addGameVersion 'Fabric'
 
 		mainArtifact(remapJar) {
