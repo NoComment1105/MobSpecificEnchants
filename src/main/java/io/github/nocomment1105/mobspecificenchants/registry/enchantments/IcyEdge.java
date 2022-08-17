@@ -40,6 +40,12 @@ public class IcyEdge extends Enchantment implements IEnchantmentAndHelper {
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         // This can be a null check because target is already an instanceof Entity
         if (target != null) {
+            // Using the Vanilla freeze allows automatic applying of mechanics such as freeze weakness and immunity which certain mobs have
+            if (level == 1) {
+                target.setFrozenTicks(240);
+            } else {
+                target.setFrozenTicks(320);
+            }
             if (target.getType() == EntityType.BLAZE || target.getType() == EntityType.GHAST || target.getType() == EntityType.MAGMA_CUBE
                     || target.getType() == EntityType.HOGLIN || target.getType() == EntityType.PIGLIN || target.getType() == EntityType.PIGLIN_BRUTE
                     || target.getType() == EntityType.ZOMBIFIED_PIGLIN || target.getType() == EntityType.STRIDER || target.getType() == EntityType.ZOGLIN) {
