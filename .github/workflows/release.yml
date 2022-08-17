@@ -24,7 +24,7 @@ jobs:
       - name: Build Artifacts
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: build modrinth curseforge--stacktrace
+          arguments: build modrinth curseforge --stacktrace
 
       - name: Upload artifacts GitHub
         uses: AButler/upload-release-assets@v2.0
