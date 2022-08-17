@@ -10,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: 17
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Release Artifacts
-        run: ./gradlew build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          arguments: build modrinth curseforge--stacktrace
+
       - name: Upload artifacts GitHub
         uses: AButler/upload-release-assets@v2.0
         with:
