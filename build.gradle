@@ -36,6 +36,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation 'maven.modrinth:lazydfu:0.1.2'
+
+	gradleApi()
 }
 
 processResources {
@@ -63,6 +65,11 @@ jar {
 	from('LICENSE') {
 		rename { "${it}_${project.archivesBaseName}"}
 	}
+}
+
+wrapper {
+	gradleVersion("7.5.1")
+	distributionType(Wrapper.DistributionType.BIN)
 }
 
 // configure the maven publication
