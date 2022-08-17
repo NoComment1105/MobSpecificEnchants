@@ -10,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tag.EntityTypeTags;
 
 public class IcyEdge extends Enchantment implements IEnchantmentAndHelper {
     public IcyEdge(Rarity weight, EquipmentSlot... slotTypes) {
@@ -46,9 +47,7 @@ public class IcyEdge extends Enchantment implements IEnchantmentAndHelper {
             } else {
                 target.setFrozenTicks(320);
             }
-            if (target.getType() == EntityType.BLAZE || target.getType() == EntityType.GHAST || target.getType() == EntityType.MAGMA_CUBE
-                    || target.getType() == EntityType.HOGLIN || target.getType() == EntityType.PIGLIN || target.getType() == EntityType.PIGLIN_BRUTE
-                    || target.getType() == EntityType.ZOMBIFIED_PIGLIN || target.getType() == EntityType.STRIDER || target.getType() == EntityType.ZOGLIN) {
+            if (target.getType().isIn(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES)) {
                 ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 4 * level, level));
                 ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 20 * 2 * level, level - 1));
             } else {
@@ -60,10 +59,8 @@ public class IcyEdge extends Enchantment implements IEnchantmentAndHelper {
 
     @Override
     public float getEntityAttackDamage(Entity entity, float level) {
-        if (entity.getType() == EntityType.BLAZE || entity.getType() == EntityType.GHAST || entity.getType() == EntityType.MAGMA_CUBE
-                || entity.getType() == EntityType.HOGLIN || entity.getType() == EntityType.PIGLIN || entity.getType() == EntityType.PIGLIN_BRUTE
-                || entity.getType() == EntityType.ZOMBIFIED_PIGLIN || entity.getType() == EntityType.STRIDER || entity.getType() == EntityType.ZOGLIN) {
-            return level;
+        if (entity.getType().isIn(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES)) {
+            return level * 6f;
         }
         return 0.0f;
     }
