@@ -5,5 +5,13 @@
   "enchantment.mobspecificenchants.cube_slicer": "Cube Slicer",
   "enchantment.mobspecificenchants.wither_waster": "Wither Waster",
   "enchantment.mobspecificenchants.fly_swatter": "Fly Swatter",
-  "enchantment.mobspecificenchants.icy_edge": "Icy Edge"
+  "enchantment.mobspecificenchants.icy_edge": "Icy Edge",
+  
+  "enchantment.mobspecificenchants.bane_of_illagers.desc": "Increases damage against Illagers and Zombie Villagers.",
+  "enchantment.mobspecificenchants.bane_of_enders.desc": "Increases damage against ender mobs.",
+  "enchantment.mobspecificenchants.bane_of_bacon.desc": "Increases damage against pig-like mobs.",
+  "enchantment.mobspecificenchants.cube_slicer.desc": "Increases damage against cube-like mobs.",
+  "enchantment.mobspecificenchants.wither_waster.desc": "Increases damage against wither mobs.",
+  "enchantment.mobspecificenchants.fly_swatter.desc": "Increases damage against flying mobs.",
+  "enchantment.mobspecificenchants.icy_edge.desc": "Applies the slowness debuff to mobs. Also increases damage against nether mobs and gives them the weakness debuff."
 }
