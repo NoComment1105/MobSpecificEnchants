@@ -31,7 +31,7 @@ This mod adds several enchants with mob specific features!
   * +3.2 damage per level to Withers and Wither Skeleton
   * Can only be obtained from trading and treasure
 * Fly Swatter
-  * +2.5 damage per level to flying mobs
+  * +2.5 damage per level to Bees, Bats, Blazes, Parrots, Ghasts, Vexes, and Phantoms
 * Icy Edge
   * Applies Slowness effect to all mobs hit
   * Applies one tick of freeze damage to all mobs hit
