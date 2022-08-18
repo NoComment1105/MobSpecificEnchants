@@ -24,7 +24,7 @@ This mod adds several enchants with mob specific features!
   * +3 damage per level to Pigs, Piglins, and Brutes
   * +2.5 damage per level to Zombified Piglins
 * Bane of Enders
-  * +3 damage per level to Endermen, Endermites, and Shulkers
+  * +3 damage per level to Endermen, Endermites, Shulkers, and the Ender Dragon
 * Cube Slicer
   * +2.5 damage per level to Slimes and Magma Cubes
 * Wither Waster
