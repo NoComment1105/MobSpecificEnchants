@@ -17,23 +17,29 @@
 This mod adds several enchants with mob specific features!
 
 ### Features
-* Bane Of Illagers Enchant
-  * Does 3 times damage to Illagers and Villagers, 2.5 times damage to Zombie Villagers 
-* Bane of Bacon enchant
-  * Does 3 times damage to Pig based mobs, 2.5 times to Zombified Piglins
-* Bane of Enders Enchant
-  * Does 3 times damage to all End based mobs
-* Cube Slicer Enchant
-  * Does 2.5 times damage to Slime and Magma cubes
-* Wither Waster Enchant
-  * Does 3.2 times damage to Withers and Wither Skeleton
+* Bane Of Illagers
+  * +3 damage per level to Evokers, Pillagers, Vindicators, and Illusioners (if some mod/datapack makes them spawn)
+  * +2.5 damage per level to Villagers
+* Bane of Bacon
+  * +3 damage per level to Pigs, Piglins, and Brutes
+  * +2.5 damage per level to Zombified Piglins
+* Bane of Enders
+  * +3 damage per level to Endermen, Endermites, Shulkers, and the Ender Dragon
+* Cube Slicer
+  * +2.5 damage per level to Slimes and Magma Cubes
+* Wither Waster
+  * +3.2 damage per level to Withers and Wither Skeleton
   * Can only be obtained from trading and treasure
 * Fly Swatter
-  * Does 2.5 times damage to flying mobs
+  * +2.5 damage per level to Bees, Bats, Blazes, Parrots, Ghasts, Vexes, and Phantoms
 * Icy Edge
-  * Applies Slowness to mobs. (Will eventually be updated to actually do freezing) 
-  * Applies both Slowness and Weakness to nether mobs, because cold bad to them 🥶
-  * Does more damage to Nether mobs, again, because cold bad. The extra damage is the level of enchantment you have (So 2 extra if you have icy edge 2)
+  * Applies Slowness effect to all mobs hit
+  * Applies one tick of freeze damage to all mobs hit
+    * Uses Vanilla damage so mobs weak to freezing will take extra damage
+  * Extra effects to mobs weak to freeze:
+    * +6 damage per level
+    * Increased duration and strength of Slowness effect
+    * Applies Weakness effect
 
 ### The Developers
 
