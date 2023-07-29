@@ -4,13 +4,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.FireAspectEnchantment;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tag.EntityTypeTags;
+import net.minecraft.registry.tag.EntityTypeTags;
 
 public class IcyEdge extends Enchantment implements IEnchantmentAndHelper {
     public IcyEdge(Rarity weight, EquipmentSlot... slotTypes) {
